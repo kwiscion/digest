@@ -21,7 +21,9 @@ Description: Implementation of a function 'digest()' for the creation of hash
 URL: http://dirk.eddelbuettel.com/code/digest.html
 BugReports: https://github.com/eddelbuettel/digest/issues
 Depends: R (>= 3.3.0)
-Imports: utils
+Imports: 
+    utils,
+    R.utils
 License: GPL (>= 2)
 Suggests: tinytest, knitr, rmarkdown, minidown
 VignetteBuilder: knitr

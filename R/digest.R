@@ -35,7 +35,6 @@ digest <- function(object, algo=c("md5", "sha1", "crc32", "sha256", "sha512",
                    seed=0,
                    errormode=c("stop","warn","silent"),
                    serializeVersion=.getSerializeVersion()) {
-
     # Explicitly specify choices; this is much faster than having match.arg()
     # infer them from the function's formals.
     algo <- match.arg(algo, c("md5", "sha1", "crc32", "sha256", "sha512",
@@ -172,7 +171,7 @@ check_file <- function(object, errormode){
         return(.errorhandler("The specified pathname is not a file: ",
                              object, mode=errormode))
     }
-    if (file.access(object, 4)) {
+    if (R.utils::fileAccess(object, 4)) {
         return(.errorhandler("The specified file is not readable: ",
                              object, mode=errormode))                  			# #nocov end
     }
